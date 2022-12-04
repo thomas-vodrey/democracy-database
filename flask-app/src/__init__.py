@@ -29,11 +29,15 @@ def create_app():
     from src.customers.customers import customers
     from src.products.products  import products
     from src.voter.voter import voter
+    from src.candidate.candidate import candidate
+    from src.official.official import official
 
     # Register the routes that we just imported so they can be properly handled
     app.register_blueprint(views,       url_prefix='/classic')
     app.register_blueprint(customers,   url_prefix='/classic')
     app.register_blueprint(products,    url_prefix='/classic')
     app.register_blueprint(voter, url_prefix='/voter')
+    app.register_blueprint(candidate, url_prefix='/candidate')
+    app.register_blueprint(official, url_prefix='/official')
 
     return app
