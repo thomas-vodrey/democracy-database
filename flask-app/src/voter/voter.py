@@ -4,21 +4,6 @@ from src import db
 
 voter = Blueprint('voter', __name__)
 
-# Get all voters from the DB
-@voter.route('/voters', methods=['GET'])
-def get_voters():
-    cursor = db.get_db().cursor()
-    cursor.execute('select * from voter')
-    row_headers = [x[0] for x in cursor.description]
-    json_data = []
-    theData = cursor.fetchall()
-    for row in theData:
-        json_data.append(dict(zip(row_headers, row)))
-    the_response = make_response(jsonify(json_data))
-    the_response.status_code = 200
-    the_response.mimetype = 'application/json'
-    return the_response
-
 # Gets the VoterID of a voter from their SSN
 @voter.route('/findvoter/ssn/<socSec>', methods=['GET'])
 def get_voter_ssn(socSec):
