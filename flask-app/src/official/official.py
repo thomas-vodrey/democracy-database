@@ -46,6 +46,7 @@ def get_abs_requests():
     the_response.mimetype = 'application/json'
     return the_response
 
+# Marks an absentee ballot request complete
 @official.route('/absenteeRequests/markComplete', methods=['POST'])
 def abs_request_mark_complete():
     current_app.logger.info(request.form)
