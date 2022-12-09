@@ -1,25 +1,23 @@
-# MySQL + Flask Boilerplate Project
+# Democracy in Database
 
-This repo contains a boilerplate setup for spinning up 2 docker containers: 
-1. A MySQL 8 container for obvious reasons
-1. A Python Flask container to implement a REST API
+Democracy in Database represents the functions of a local board of elections in the fictional Zenith County, Winnemac.
 
-## How to setup and start the containers
-**Important** - you need Docker Desktop installed
+This repo contains all necessary code and infrastructure needed to run the back-end containers of the project. The front-end UI is available elsewhere on Appsmith.
 
-1. Clone this repository.  
-1. Create a file named `db_root_password.txt` in the `secrets/` folder and put inside of it the root password for MySQL. 
-1. Create a file named `db_password.txt` in the `secrets/` folder and put inside of it the password you want to use for the `webapp` user. 
-1. In a terminal or command prompt, navigate to the folder with the `docker-compose.yml` file.  
-1. Build the images with `docker compose build`
-1. Start the containers with `docker compose up`.  To run in detached mode, run `docker compose up -d`. 
+## Pitch
 
-## For setting up a Conda Web-Dev environment:
+View the pitch video [here](https://youtu.be/gjVZD3xIGK0).
 
-1. `conda create -n webdev python=3.9`
-1. `conda activate webdev`
-1. `pip install flask flask-mysql flask-restful cryptography flask-login`
+## Features
 
+### Voters
 
+Voters can register for the first time or, if already registered, change their address or party registration. Once registered they can view their sample ballot to see upcoming elections and the candidates they'll be voting on.
 
+### Candidates
 
+Candidates can view information on the offices up for election and whether they've qualified for the ballot. Candidates can also access a voter lookup for the sake of canvassing.
+
+### Election Officials
+
+Election officials oversee the election processes by updating the number of signatures candidates have received to appear on the ballot, and processing absentee ballot requests made by voters.
